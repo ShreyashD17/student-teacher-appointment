@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student-Teacher Booking Appointment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Merriweather:wght@300&family=Montserrat:wght@700&family=PT+Serif&family=Roboto:wght@300&family=Sacramento&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+
+      /* Search Bar  */
+      input[type="search"]{
+        padding: 7px;
+        border-radius: 50px;
+      }
+
+      .fa-solid {
+        padding: 7px;
+        cursor: pointer;
+      }
+
+      input[type="button"] {
+        padding: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        background: rgb(54, 153, 202);
+      }
+
+      input[type="button"]:hover {
+        background-color: rgb(56, 92, 154);
+        color: white;
+      }
+
+      .search {
+        border-radius: 50px;
+      }
+
+
+      /* Appointment-form */
+        label {
+          margin-bottom: 3px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="time"] {
+          padding: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+
+
+        .appointment-form button, .message-form button {
+          padding: 10px;
+          background-color: #0ee2f5;
+          color: black;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        textarea {
+          margin-bottom: 15px;
+        }
+
+        .appointment-form button:hover, .message-form button:hover {
+          background-color: #638de6;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo"><img src="./img/calendar.png" alt=""></div>
+        <ul class="links">
+          <li ><a href="index.html" class="nav">Home</a></li>
+          <li ><a href="index.html"class="nav">About</a></li>
+          <li ><a href="index.html" class="nav">Contact</a></li>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Login/Register
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="student-login.html">Student</a>
+              <a href="teacher-login.html">Teacher</a>
+              <a href="admin-login.html">Admin</a>
+            </div>
+          </div>
+        </ul>
+        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <div class="toggle">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><div class="dropdown">
+            <button class="dropbtn">
+              Login/Register
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="student-login.html">Student</a>
+              <a href="teacher-login.html">Teacher</a>
+              <a href="admin-login.html">Admin</a>
+            </div></li>
+        </div>
+      </div>
+    </header>
+    
+    <div class="search-bar">
+      <div class="search">
+        <form action="">
+          <input type="search" name="" id="" placeholder="Search...">
+          <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <div class="logout">
+        <div>User<i class="fa-solid fa-circle-user"></i></div>
+        <input type="button" value="Logout" class="logout-btn"  onclick="logout()" id="logo">
+      </div>
+    </div>
+
+    <div class="middle">
+      <div id="appointment-form">
+        <h2>Book an Appointment</h2>
+        <form class="appointment-form" id="a-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="a-name" required>
+  
+            <label for="name">Teacher Name:</label>
+            <input type="text" id="a-teach-name" required>
+            
+            <label for="roll">Roll No:</label>
+            <input type="text" id="a-roll" required>
+            
+            <label for="date">Date of Appointment:</label>
+            <input type="date" id="a-date" required>
+            
+            <button type="submit" id="appo-submit">Book Appointment</button>
+        </form>
+     </div>
+  
+     <div id="message-form">
+      <h2>Send Message</h2>
+        <form action="" class="message-form" id="m-form">
+          <label for="name">Your Name:</label>
+          <input type="text" id="m-name" required>
+
+          <label for="name">Teacher Name:</label>
+          <input type="text" id="m-teach-name" required>
+  
+          <label for="massage">Message:</label>
+          <textarea name="" id="message" cols="30" rows="5"></textarea>
+  
+          <button type="submit" id="mass-submit">Send</button>
+        </form>
+     </div>  
+    </div>
+    <script src="./Javascript/app.js"></script>
+    <script src="./Javascript/after-stud-Login.js" type="module"></script>
+</body>
+</html>
